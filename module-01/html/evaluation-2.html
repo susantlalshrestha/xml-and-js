@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- title of the page -->
+    <title>Evaluation 2</title>
+    <!-- set the viewport of the page -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <!-- container as a wrapper for the page -->
+    <div id="container">
+      <form action="" method="post">
+        <fieldset style="display: inline-block">
+          <label for="email">Your E-mail*:</label>
+          <input type="email" id="email" name="email" />
+          <br />
+          <br />
+          <label for="date_of_visit">Date of Visit:</label>
+          <input type="date" id="date_of_visit" name="date_of_visit" />
+          <br />
+          <br />
+          <label for="comment">Your Comment:</label>
+          <br />
+          <textarea id="comment" cols="50" rows="5"></textarea>
+          <br />
+          <br />
+          <button type="button" id="submit" onclick="showOutput()">
+            Send your Feedback
+          </button>
+        </fieldset>
+      </form>
+    </div>
+    <!-- linking external javascript -->
+    <script src="../js/evaluation-2.js"></script>
+  </body>
+</html>
