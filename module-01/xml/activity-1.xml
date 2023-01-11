@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profiles>
+    <profile>
+        <name>
+            <firstName>Susant</firstName>
+            <lastName>Shrestha</lastName>
+        </name>
+        <description>I am a part-time freelance software developer. I am originally from Nepal. Currently, I am in Toronto, Canada studying at Humber College. Beside studying and coding, I also do part-time job at Tim Hortons.</description>
+        <interests>
+            <interest>Coding</interest>
+            <interest>Treking</interest>
+        </interests>
+    </profile>
+    <profile>
+        <name>
+            <firstName>Prashant</firstName>
+            <lastName>Shrestha</lastName>
+        </name>
+        <description>I am the brother of Susant. I am also a software developer, currently, working in Amesterdam, Netherlands.</description>
+        <interests>
+            <interest>Coding</interest>
+            <interest>Treking</interest>
+            <interest>Writing</interest>
+        </interests>
+    </profile>
+</profiles>
