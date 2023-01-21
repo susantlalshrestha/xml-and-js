@@ -1,0 +1,39 @@
+/* Change font size of originalName to 24 */
+originalName {
+  font-size: 20px;
+}
+
+/* Display each category on the new line */
+category {
+  display: block;
+  text-decoration: underline;
+}
+
+* {
+  display: block;
+}
+
+menuInfo {
+  padding: 10px;
+}
+
+title {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+menu {
+  margin: 10px;
+}
+
+menuItem {
+  padding: 10px;
+}
+
+oldName {
+  font-style: italic;
+}
+
+indicator {
+  display: inline-block;
+}
