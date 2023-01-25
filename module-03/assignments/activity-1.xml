@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<employeeList xmlns:list="urn:corp:list" xmlns:employee="urn:corp:emp" xmlns:department="urn:corp:dep">
+  <list:personList>
+    <employee:empID>E0000001</employee:empID>
+    <department:name>Sales</department:name>
+    <employee:name>John Smith</employee:name>
+  </list:personList>
+  <list:personList>
+    <employee:empID>E0000002</employee:empID>
+    <department:name>Development</department:name>
+    <employee:name>Ichiro Tanaka</employee:name>
+  </list:personList>
+  <list:personList>
+    <employee:empID>E0000003</employee:empID>
+    <department:name>Development</department:name>
+    <employee:name>Jiro Suzuki</employee:name>
+  </list:personList>
+  <list:personList>
+    <employee:empID>E0000004</employee:empID>
+    <department:name>Administrative</department:name>
+    <employee:name>Saburo Takahashi</employee:name>
+  </list:personList>
+</employeeList>
+<!-- Susant Shrestha N01550307 -->
