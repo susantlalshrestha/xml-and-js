@@ -5,9 +5,9 @@
     <manufacturer id="sjb-pet">SJB Pet Boutique</manufacturer>
     <description>Something for every day of the week</description>
     <prices>
-      <price>US$35.99</price>
-      <price>CAD$44.99</price>
-      <price>&#8364;26.79</price>
+      <price currency="US">35.99</price>
+      <price currency="CAD">44.99</price>
+      <price currency="&#8364;">26.79</price>
     </prices>
     <productItems>1200, 1201, 1202, 1203, 1204, 1205, 1206</productItems>
   </product>
@@ -16,9 +16,9 @@
     <manufacturer id="sjb-pet">SJB Pet Boutique</manufacturer>
     <description>Playtime morning, noon, and night</description>
     <prices>
-      <price>US$15.99</price>
-      <price>CAD$18.82</price>
-      <price>&#8364;11.90</price>
+      <price currency="US">15.99</price>
+      <price currency="CAD">18.82</price>
+      <price currency="&#8364;">11.90</price>
     </prices>
     <productItems>4430, 6500, 4434</productItems>
   </product>
@@ -26,9 +26,9 @@
     <productName>Piggy Snuggle Basket</productName>
     <manufacturer id="acme">ACME</manufacturer>
     <prices>
-      <price>US$17.50</price>
-      <price>CAD$21.96</price>
-      <price>&#8364;13.03</price>
+      <price currency="US">17.50</price>
+      <price currency="CAD">21.96</price>
+      <price currency="&#8364;">13.03</price>
     </prices>
     <productItems>3230, 3232</productItems>
   </product>
@@ -36,9 +36,9 @@
     <productName>Dog Snuggle Basket</productName>
     <manufacturer id="acme">ACME</manufacturer>
     <prices>
-      <price>US$14.25</price>
-      <price>CAD$17.88</price>
-      <price>&#8364;10.61</price>
+      <price currency="US">14.25</price>
+      <price currency="CAD">17.88</price>
+      <price currency="&#8364;">10.61</price>
     </prices>
     <productItems>3230, 3232, 3250</productItems>
   </product>
