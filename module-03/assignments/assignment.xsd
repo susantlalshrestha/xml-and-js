@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="catalog" type="CatalogType" />
+
+    <xs:complexType name="CatalogType">
+        <xs:sequence>
+            <xs:element name="product" type="ProductType" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ProductType">
+        <xs:sequence>
+            <xs:element name="catalog_item" minOccurs="1" maxOccurs="unbounded" type="CatalogItemType" />
+        </xs:sequence>
+        <xs:attribute name="product_id" type="xs:ID" use="required" />
+        <xs:attribute name="description" type="xs:string" />
+        <xs:attribute name="product_image" type="xs:string" />
+    </xs:complexType>
+
+    <xs:complexType name="CatalogItemType">
+        <xs:sequence>
+            <xs:element name="item_number" type="xs:string" />
+            <xs:element name="price" type="xs:decimal" />
+            <xs:element name="size" minOccurs="1" maxOccurs="unbounded" type="SizeType" />
+        </xs:sequence>
+        <xs:attribute name="gender" type="GenderType" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="SizeType">
+        <xs:sequence>
+            <xs:element name="color_swatch" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="image" type="xs:string" />
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="description" type="xs:string" />
+    </xs:complexType>
+
+    <xs:simpleType name="GenderType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Men"/>
+            <xs:enumeration value="Women"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

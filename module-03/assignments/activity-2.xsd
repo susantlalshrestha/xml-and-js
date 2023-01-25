@@ -29,7 +29,6 @@
         <xs:attribute name="shippable" type="xs:boolean" />
     </xs:complexType>
 
-
     <xs:complexType name="PricesType">
         <xs:sequence>
             <xs:element name="price" minOccurs="0" maxOccurs="unbounded">
@@ -44,4 +43,3 @@
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
-

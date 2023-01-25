@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<catalog>
+<!-- To refer to a DTD in an XMLdocument -->
+<!-- <!DOCTYPE catalog SYSTEM "assignment.dtd"> -->
+<!-- To refer to an XML Schema in an XMLdocument -->
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:noNamespaceSchemaLocation="catalog.xsd">
   <product product_id="e4892f6a-7cce-11ec-90d6-0242ac120003" description="Cardigan Sweater" product_image="cardigan.jpg">
     <catalog_item gender="Men">
       <item_number>QWZ5671</item_number>
