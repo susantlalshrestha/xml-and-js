@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Customers</title>
+    <style>
+      .card {
+        border: 1px solid black;
+        padding: 20px;
+        margin: 20px;
+        max-width: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="customers"></div>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "../customers.xml", true);
+      xhttp.send();
+
+      const displayData = (xmlDoc) => {
+        const containerElement = document.getElementById(`customers`);
+
+        const customerNodes = xmlDoc.getElementsByTagName("customer");
+
+        for (let index = 0; index < customerNodes.length; index++) {
+          const customer = customerNodes[index];
+          const parsedCustomer = parseCustomer(customer);
+          const customerElement = createCustomerElement(parsedCustomer);
+          containerElement.appendChild(customerElement);
+        }
+      };
+
+      const createCustomerElement = (parsedCustomer) => {
+        const id = `<p>Customer ID: ${parsedCustomer.id}</p>`;
+        const name = `<p>Name: ${parsedCustomer.name}</p>`;
+        const address = `<p>Address: ${parsedCustomer.address}</p>`;
+        const phone = `<p>Phone: ${parsedCustomer.phone}</p>`;
+        const email = parsedCustomer.email
+          ? `<p>Email: ${parsedCustomer.email}</p>`
+          : ``;
+        const orders = createOrderElement(parsedCustomer.orders);
+        return stringToNode(
+          `<div class="card">${id}${name}${address}${phone}${email}${orders}</div>`
+        );
+      };
+
+      const createOrderElement = (orders) => {
+        let ordersElement = "<h4>Order List</h4><ol>";
+        for (let order of orders) {
+          orderItemsElement = createOrderItemElement(order.items);
+          ordersElement += `<li>
+            <p>Order ID: ${order.id}, Ordered Date: ${order.orderDate}</p>
+            ${orderItemsElement}
+          </li>`;
+        }
+        ordersElement += "</ol>";
+        return ordersElement;
+      };
+
+      const createOrderItemElement = (items) => {
+        let itemsElement = "<ul>";
+        for (let item of items) {
+          itemsElement += `<li>Price: ${item.itemPrice}, Quantity: ${item.itemQty}</li>`;
+        }
+        itemsElement += "</ul>";
+        return itemsElement;
+      };
+
+      const parseCustomer = (customer) => {
+        const id = customer.getAttribute("custID");
+        const name =
+          customer.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+        const address =
+          customer.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+        const phone =
+          customer.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+        const email =
+          customer.getElementsByTagName(`email`)[0]?.childNodes[0].nodeValue;
+        const orders = parseOrders(customer.getElementsByTagName(`order`));
+        return { id, name, address, phone, email, orders };
+      };
+
+      const parseOrders = (orderNodes) => {
+        const orders = [];
+        for (let index = 0; index < orderNodes.length; index++) {
+          const order = orderNodes[index];
+          const id = order.getAttribute(`orderID`);
+          const orderDate =
+            order.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+          const items = parseOrderItems(order.getElementsByTagName(`item`));
+          orders.push({ id, orderDate, items });
+        }
+        return orders;
+      };
+
+      const parseOrderItems = (orderItemNodes) => {
+        const items = [];
+        for (let index = 0; index < orderItemNodes.length; index++) {
+          const item = orderItemNodes[index];
+          const itemPrice =
+            item.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+          const itemQty =
+            item.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+          items.push({ itemPrice, itemQty });
+        }
+        return items;
+      };
+
+      const stringToNode = (html) => {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      };
+    </script>
+  </body>
+</html>
