@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:element name="automotive-data" type="AutomotiveDataType"/>
+
+  <xs:complexType name="AutomotiveDataType">
+    <xs:sequence>
+      <xs:element name="manufacturers-data" type="ManufacturersDataType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ManufacturersDataType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="street" type="xs:string"/>
+      <xs:element name="city" type="xs:string"/>
+      <xs:element name="region" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="country" type="xs:string"/>
+      <xs:element name="carModels" type="CarModelsType"/>
+      <xs:element name="cars" type="CarsType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CarModelsType">
+    <xs:sequence>
+      <xs:element name="carModel" type="CarModelType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CarsType">
+    <xs:sequence>
+      <xs:element name="car" type="CarType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CarModelType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="year" type="xs:string"/>
+      <xs:element name="usdPrice" type="xs:string"/>
+      <xs:element name="cadPrice" type="xs:string"/>
+      <xs:element name="euroPrice" type="xs:string"/>
+      <xs:element name="poundPrice" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CarType">
+    <xs:sequence>
+      <xs:element name="vin" type="xs:string"/>
+      <xs:element name="color" type="xs:string"/>
+      <xs:element name="buyer" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

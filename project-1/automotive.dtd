@@ -1,0 +1,20 @@
+<!ELEMENT automotive-data (manufacturers-data+)>
+<!ELEMENT manufacturers-data (id, name, street, city, region?, country, carModels, cars)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT region (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT carModels (carModel+)>
+<!ELEMENT carModel (id, name, year, usdPrice, cadPrice, euroPrice, poundPrice)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT usdPrice (#PCDATA)>
+<!ELEMENT cadPrice (#PCDATA)>
+<!ELEMENT euroPrice (#PCDATA)>
+<!ELEMENT poundPrice (#PCDATA)>
+<!ELEMENT cars (car+)>
+<!ELEMENT car (vin, color, buyer)>
+<!ELEMENT vin (#PCDATA)>
+<!ELEMENT color (#PCDATA)>
+<!ELEMENT buyer (#PCDATA)>
