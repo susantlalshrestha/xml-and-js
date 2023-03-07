@@ -17,3 +17,11 @@
   - Fixed the issues of naming conflict of id and name.
 
   - Added missing closing tag in xml.
+
+- [x] Performed validation check of dtd and xsd.
+
+### Screenshots
+
+- ![image info](./screenshots/formatted-xml-with-xslt.png)
+- ![image info](./screenshots/dtd-validation.png)
+- ![image info](./screenshots/xsd-validation.png)
