@@ -43,7 +43,17 @@ const stringToNode = (html) => {
 };
 
 // Using fetch API with .then()
-fetch("./people.xml", { method: "GET" })
-  .then((response) => response.text())
-  .then((xmlText) => new DOMParser().parseFromString(xmlText, "text/xml"))
-  .then(displayData);
+// fetch("./people.xml", { method: "GET" })
+//   .then((response) => response.text())
+//   .then((xmlText) => new DOMParser().parseFromString(xmlText, "text/xml"))
+//   .then(displayData);
+
+// Using fetch API with async/await
+const main = async () => {
+  const result = await fetch("./people.xml", { method: "GET" });
+  const xmlText = await result.text();
+  const xmlDoc = new DOMParser().parseFromString(xmlText, "text/xml");
+  displayData(xmlDoc);
+};
+
+main();
