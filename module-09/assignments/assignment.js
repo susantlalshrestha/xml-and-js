@@ -42,6 +42,7 @@ const stringToNode = (html) => {
   return template.content.firstChild;
 };
 
+// Using fetch API with async/await
 const main = async () => {
   const result = await fetch("./people.xml", { method: "GET" });
   const xmlText = await result.text();

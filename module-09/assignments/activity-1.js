@@ -55,4 +55,5 @@ const stringToNode = (html) => {
   return template.content.firstChild;
 };
 
+// Using promisified XHR
 xhr("./people.xml").then(displayData);

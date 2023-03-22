@@ -42,6 +42,7 @@ const stringToNode = (html) => {
   return template.content.firstChild;
 };
 
+// Using fetch API with .then()
 fetch("./people.xml", { method: "GET" })
   .then((response) => response.text())
   .then((xmlText) => new DOMParser().parseFromString(xmlText, "text/xml"))
