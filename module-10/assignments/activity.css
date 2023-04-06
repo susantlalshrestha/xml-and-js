@@ -1,0 +1,79 @@
+/* style for all html element */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* styles for body element */
+body {
+  background-color: #ffffff;
+}
+
+header {
+  align-items: center;
+  background-color: #1db954;
+  display: flex;
+  height: 120px;
+  justify-content: center;
+}
+
+header img {
+  height: 80px;
+}
+
+#genres_container {
+  display: flex;
+  background-color: #191414;
+  align-items: center;
+  color: #bbbbbb;
+}
+
+#genres_container span {
+  border-right: 1px solid #444444;
+  padding: 10px;
+  margin: 10px;
+}
+
+#genres {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.genre {
+  background-color: #ffffff;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 5px 15px 5px 10px;
+  color: #191414;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.genre:hover {
+  background-color: #1db954;
+  box-shadow: 2px 2px 10px #1db954;
+  color: #ffffff;
+}
+
+.genre_active {
+  background-color: #1db954;
+  box-shadow: 2px 2px 10px #1db954;
+  color: #ffffff;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 5px 15px 5px 10px;
+  cursor: pointer;
+}
+
+.genre img,
+.genre_active img {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
