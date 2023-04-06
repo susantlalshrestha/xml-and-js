@@ -82,9 +82,9 @@ const createPlaylistElement = ({
   external_urls: { spotify },
   images: [image],
 }) => {
-  return `<div>
+  return `<div class="playlist_card">
     <a href="${spotify}" alt="${name}" target="_blank">
-      <img src="${image.url}" width="180" height="180"/>
+      <img src="${image.url}" />
     </a>
   </div>`;
 };
