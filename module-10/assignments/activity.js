@@ -40,6 +40,7 @@ const getPlaylistByCategory = async (token, categoryId) => {
   );
 
   const data = await result.json();
+  console.log(data);
   return data.playlists.items;
 };
 
