@@ -59,21 +59,24 @@ const getTracksByPlaylist = async (token, playlistId) => {
 let genres = [];
 let token = null;
 
-const loadGenres = async (gname) => {
+const loadGenres = async (gname, showPlaylist) => {
   if (!token) token = await getToken();
   if (genres.length === 0) genres = await getGenres(token);
-  genres = await Promise.all(
-    genres.map(async (genre) => {
-      if (genre.playlist) return genre;
-      const playlist = await loadPlaylist(genre.id);
-      return { ...genre, playlist };
-    })
-  );
+  if (showPlaylist) {
+    genres = await Promise.all(
+      genres.map(async (genre) => {
+        if (genre.playlist) return genre;
+        const playlist = await loadPlaylist(genre.id);
+        return { ...genre, playlist };
+      })
+    );
+  }
   if (gname) {
     return genres.filter(({ name }) =>
       name.toLowerCase().includes(gname.toLowerCase())
     );
   }
+  console.log(genres);
   return genres;
 };
 
@@ -98,12 +101,33 @@ const loadTracks = async (playlistId) => {
   return await getTracksByPlaylist(token, playlistId);
 };
 
-const renderGenres = (genres) => {
-  const html = genres.map(createGenreElement).join("");
+const renderGenresWithPlaylist = (genres) => {
+  const html = genres.map(createGenreElementWithPlaylist).join("");
+  document.getElementById(`genre-container`).className = "genre-container";
   document.getElementById(`genre-container`).innerHTML = html;
 };
 
-const createGenreElement = ({ name, id, icons: [icon], playlist }) => {
+const renderGenres = (genres) => {
+  const html = genres.map(createGenreElement).join("");
+  document.getElementById(`genre-container`).className = "genre-container-grid";
+  document.getElementById(`genre-container`).innerHTML = html;
+};
+
+const createGenreElement = ({ name, icons: [icon] }) => `
+    <div class="genre-card-grid">
+        <img src="${icon.url}" alt"${name}" />
+        <div class="genre-info-grid">
+            <h3>${name}</h3>
+        </div>
+    </div>
+`;
+
+const createGenreElementWithPlaylist = ({
+  name,
+  id,
+  icons: [icon],
+  playlist,
+}) => {
   if (playlist && playlist.length > 0) {
     return `
       <div class="genre-card">
@@ -156,7 +180,9 @@ const createTracksElement = ({ track: { name, album, artists } }) => `
 const onSubmit = (event) => {
   event.preventDefault();
   const name = event.target.name.value;
-  loadGenres(name).then(renderGenres);
+  const showPlaylist = event.target.showPlaylist.checked;
+  const render = showPlaylist ? renderGenresWithPlaylist : renderGenres;
+  loadGenres(name, showPlaylist).then(render);
 };
 
 const onReset = () => {

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify API</title>
+    <link rel="stylesheet" type="text/css" href="./assignment.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./images/spotify_logo.png" />
+      <form onsubmit="onSubmit(event)" onreset="onReset()">
+        <input type="checkbox" name="showPlaylist" id="show-playlist" />
+        <label for="show-playlist">Show Playlist</label>
+        <input
+          type="text"
+          name="name"
+          id="genre-name"
+          placeholder="Type genre name"
+        />
+        <button type="submit">FILTER</button>
+        <button type="reset">RESET</button>
+      </form>
+    </header>
+    <main>
+      <h1>Genres</h1>
+      <div id="genre-container" class="genre-container-grid"></div>
+    </main>
+    <script src="./assignment.js" type="text/javascript"></script>
+  </body>
+</html>

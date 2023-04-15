@@ -37,7 +37,29 @@ form {
   height: 70px;
 }
 
-input {
+label {
+  display: inline-block;
+  color: #efefef;
+  padding: 10px 10px 10px 0px;
+  cursor: pointer;
+}
+
+label:hover {
+  color: #1db954;
+  text-shadow: 1px 1px 10px #1db954;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  margin: 12px 0px;
+}
+
+input[type="checkbox"]:checked + label {
+  color: #1db954;
+  text-shadow: 1px 1px 10px #1db954;
+}
+
+input[type="text"] {
   color: #ffffff;
   background-color: #191414;
   border: 2px solid #1db954;
@@ -45,7 +67,7 @@ input {
   padding: 10px;
 }
 
-input:focus {
+input[type="text"]:focus {
   outline-color: #1db954;
   box-shadow: 2px 2px 10px #1db954;
 }
@@ -72,9 +94,16 @@ main h1 {
   padding: 20px 20px 10px;
 }
 
-#genre-container {
+.genre-container {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+}
+
+.genre-container-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
@@ -105,6 +134,7 @@ main h1 {
   overflow-x: scroll;
 }
 
+.genre-card-grid,
 .playlist-card {
   display: flex;
   width: 265px;
@@ -112,6 +142,7 @@ main h1 {
   position: relative;
 }
 
+.genre-card-grid img,
 .playlist-card img {
   display: block;
   width: 265px;
@@ -119,6 +150,7 @@ main h1 {
   object-fit: cover;
 }
 
+.genre-info-grid,
 .playlist-info,
 .playlist-info-last {
   align-items: center;
@@ -140,6 +172,7 @@ main h1 {
   left: 100%;
 }
 
+.genre-info-grid h3,
 .playlist-name {
   position: absolute;
   top: 50%;
@@ -150,6 +183,7 @@ main h1 {
   white-space: nowrap;
 }
 
+.genre-card-grid:hover .genre-info-grid,
 .playlist-card:hover .playlist-info,
 .playlist-card:hover .playlist-info-last {
   width: 100%;
