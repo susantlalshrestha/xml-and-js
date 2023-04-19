@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carbon Emission</title>
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./images/logo.png" />
+      <span>Carbon Emission</span>
+    </header>
+    <nav>
+      <form
+        onsubmit="onSubmitShowEstimates(event)"
+        onreset="onResetShowEstimates()"
+      >
+        <label>
+          <input type="checkbox" name="electricity" />
+          <span>Electricity</span>
+        </label>
+        <label>
+          <input type="checkbox" name="flight" />
+          <span>Flight</span>
+        </label>
+        <label>
+          <input type="checkbox" name="shipping" />
+          <span>Shipping</span>
+        </label>
+        <label>
+          <input type="checkbox" name="vehicle" />
+          <span>Vehicle</span>
+        </label>
+        <label>
+          <input type="checkbox" name="fuel" />
+          <span>Fuel</span>
+        </label>
+        <button type="submit">FILTER</button>
+        <button type="reset">RESET</button>
+      </form>
+    </nav>
+    <main id="estimates-container">
+      <a id="calculate-new-btn" href="./create-estimates.html" target="_top">
+        <pre>Calculate New Estimates  <span class="plus">+</span></pre>
+      </a>
+      <div id="estimates-table">
+        <div id="estimates-head">
+          <div class="estimates-row">
+            <p>TYPE</p>
+            <p>CARBON (G)</p>
+            <p>CARBON (LB)</p>
+            <p>CARBON (KG)</p>
+            <p>CARBON (MT)</p>
+            <p>ESTIMATED AT</p>
+          </div>
+        </div>
+        <div id="estimates-body"></div>
+      </div>
+    </main>
+    <script src="./main.js" type="text/javascript"></script>
+    <script>
+      window.onload = () => renderEstimates();
+    </script>
+  </body>
+</html>
