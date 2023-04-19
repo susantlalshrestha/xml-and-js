@@ -1,0 +1,23 @@
+{
+  "name": "quiz-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "main": "node main.js",
+    "test": "jest",
+    "q1": "jest questions/1.test.js",
+    "q2": "jest questions/2.test.js",
+    "q3": "jest questions/3.test.js",
+    "q4": "jest questions/4.test.js",
+    "q5": "jest questions/5.test.js"
+  },
+  "author": "OleksiiKachan",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2"
+  },
+  "devDependencies": {
+    "jest": "29.3.1"
+  }
+}
