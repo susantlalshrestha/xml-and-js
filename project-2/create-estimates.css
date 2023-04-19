@@ -1,0 +1,65 @@
+nav #goback {
+  background-color: #e4edfb;
+  bottom: 0;
+  color: #191414;
+  display: flex;
+  left: 0;
+  text-decoration: none;
+  top: 0;
+  align-items: center;
+  padding: 10px 22px;
+  position: absolute;
+}
+
+nav #goback:hover {
+  text-shadow: 2px 2px 10px #4d5b99;
+}
+
+nav #goback .arrow {
+  font-size: 1.4em;
+}
+
+main > form,
+main > div {
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #4d5b99;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 20px;
+  max-width: 400px;
+  padding: 20px;
+  width: 50%;
+}
+
+main form h4,
+main div h4 {
+  border-bottom: 1px solid #4d5b99;
+  color: #4d5b99;
+  margin-bottom: 24px;
+  padding: 4px 10px 14px;
+}
+
+main form label {
+  font-size: x-small;
+}
+
+main form input,
+main form select,
+main form button {
+  margin: 4px 0px 20px;
+}
+
+#success-response,
+#failed-response {
+  background-color: #e4edfb;
+  margin-bottom: 14px;
+  padding: 20px;
+  font-size: small;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#failed-response {
+  color: #fe7280;
+}
